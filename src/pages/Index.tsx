@@ -1,11 +1,11 @@
-const NAV_LINKS = ["Home", "Studio", "About", "Journal", "Reach Us"];
+import Navbar from "@/components/Navbar";
+
 const VIDEO_SRC = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4";
 const DISPLAY_FONT = "'Instrument Serif', serif";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
-      {/* Video Background */}
       <video
         autoPlay
         loop
@@ -16,37 +16,8 @@ const Index = () => {
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-        <span
-          className="text-3xl tracking-tight text-foreground"
-          style={{ fontFamily: DISPLAY_FONT }}
-        >
-          Velorah<sup className="text-xs">®</sup>
-        </span>
+      <Navbar />
 
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link}
-              href="#"
-              className={`text-sm transition-colors ${
-                link === "Home"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link}
-            </a>
-          ))}
-        </div>
-
-        <button className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform cursor-pointer">
-          Begin Journey
-        </button>
-      </nav>
-
-      {/* Hero */}
       <section className="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-40 py-[90px]">
         <h1
           className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-[-2.46px] max-w-7xl font-normal text-foreground"
