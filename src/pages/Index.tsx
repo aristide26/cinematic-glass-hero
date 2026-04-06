@@ -67,6 +67,9 @@ const Index = () => {
           Begin Journey
         </button>
       </section>
+
+      {/* Portfolio */}
+      <PortfolioGrid />
     </div>
   );
 };
